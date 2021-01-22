@@ -1,0 +1,15 @@
+Package: con2lki
+Type: Package
+Title: Calculate the dutch air quality index (lki) from pollutant concentrations.
+Version: 0.1.0
+Author: Mark Baas
+Maintainer: Mark Baas <mark.baas@gmail.com>
+Description: Calculates the dutch air quality index (lki). It supports PM2.5, PM10, O3 and NO2.
+    For more information: https://www.rivm.nl/bibliotheek/rapporten/2014-0050.pdf
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat
