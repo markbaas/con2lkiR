@@ -40,6 +40,7 @@ install.packages("con2lki")
 This is a basic example:
 
 ``` r
+library(dplyr, quietly = T, warn = F)
 library(con2lki)
 
 df <- data.frame(
@@ -49,9 +50,9 @@ df <- data.frame(
    pm25 = c(45, 40,  99,  2, 110)
 )
 
-df$lki = con2lki(df$no2, df$pm25, df$pm10, df$o3)
-
-df
+df %>% mutate(
+   lki = con2lki(no2, pm25, pm10, o3)
+)
 #>   no2  o3 pm10 pm25 lki
 #> 1  15  35    4   45   6
 #> 2  30  20   30   40   6

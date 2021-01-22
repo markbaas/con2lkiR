@@ -34,6 +34,7 @@ For more information see:
 https://www.rivm.nl/bibliotheek/rapporten/2014-0050.pdf
 }
 \examples{
+library(dplyr)
 
 df <- data.frame(
     no2  = c(15, 30, 100,  1, 201),

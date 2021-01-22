@@ -20,6 +20,7 @@
 #' @return A vector of lki values
 #'
 #' @examples
+#' library(dplyr)
 #'
 #' df <- data.frame(
 #'     no2  = c(15, 30, 100,  1, 201),
@@ -35,7 +36,8 @@
 #' @export
 con2lki <- function(no2, pm25, pm10, o3) {
   # check length of each vector
-  stopifnot(var(c(length(no2), length(pm25), length(pm10), length(o3))) == 0)
+  stopifnot(
+    stats::var(c(length(no2), length(pm25), length(pm10), length(o3))) == 0)
 
   steps_no2 = c(0, 10, 20, 30, 45, 60, 75, 100, 125, 150, 200)
   steps_pm25 = c(0, 10, 15, 20, 30, 40, 50, 70, 90, 100, 140)
@@ -49,7 +51,7 @@ con2lki <- function(no2, pm25, pm10, o3) {
 
   lki <- pmax(lki_no2, lki_pm25, lki_pm10, lki_o3)
 
-  if (var(c(lki_no2, lki_pm25, lki_pm10, lki_o3)) == 0) {
+  if (stats::var(c(lki_no2, lki_pm25, lki_pm10, lki_o3)) == 0) {
     lki <- lki + 1
   }
 
