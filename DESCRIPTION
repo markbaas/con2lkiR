@@ -1,14 +1,14 @@
 Package: con2lki
 Type: Package
-Title: Calculate the dutch air quality index (lki) from pollutant concentrations
+Title: Calculate the Dutch Air Quality Index (LKI)
 Version: 0.1.0
 Author: Mark Baas
 Maintainer: Mark Baas <mark.baas@gmail.com>
-Description: Calculates the dutch air quality index (lki). This index was 
+Description: Calculates the dutch air quality index (LKI). This index was 
     created on the basis of scientific studies of the health effects of air 
     pollution. From these studies it can be deduced at what concentrations a 
     certain percentage of the population can be affected. For more information 
-    see: https://www.rivm.nl/bibliotheek/rapporten/2014-0050.pdf.
+    see: <https://www.rivm.nl/bibliotheek/rapporten/2014-0050.pdf>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
