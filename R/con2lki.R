@@ -52,7 +52,7 @@ con2lki <- function(no2, pm25, pm10, o3) {
   )
 
   dfr$lki <- pmax(dfr$lki_no2, dfr$lki_pm25, dfr$lki_pm10, dfr$lki_o3, na.rm = T)
-  dfr$var <- apply(dfr[,1:4], 1, function(x) var(x, na.rm = T))
+  dfr$var <- apply(dfr[,1:4], 1, function(x) stats::var(x, na.rm = T))
   dfr$lki2 <- ifelse(!is.na(dfr$var) & dfr$var == 0, dfr$lki + 1, dfr$lki)
 
   dfr$lki2
