@@ -39,21 +39,21 @@ con2lki <- function(no2, pm25, pm10, o3) {
   stopifnot(
     stats::var(c(length(no2), length(pm25), length(pm10), length(o3))) == 0)
 
-  steps_no2 = c(0, 10, 20, 30, 45, 60, 75, 100, 125, 150, 200)
-  steps_pm25 = c(0, 10, 15, 20, 30, 40, 50, 70, 90, 100, 140)
-  steps_pm10 = c(0, 10, 20, 30, 45, 60, 75, 100, 125, 150, 200)
-  steps_o3 = c(0, 15, 30, 40, 60, 80, 100, 140, 180, 200, 240)
+  steps_no2 <- c(0, 10, 20, 30, 45, 60, 75, 100, 125, 150, 200)
+  steps_pm25 <- c(0, 10, 15, 20, 30, 40, 50, 70, 90, 100, 140)
+  steps_pm10 <- c(0, 10, 20, 30, 45, 60, 75, 100, 125, 150, 200)
+  steps_o3 <- c(0, 15, 30, 40, 60, 80, 100, 140, 180, 200, 240)
 
-  lki_no2 <- findInterval(no2, steps_no2)
-  lki_pm25 <- findInterval(pm25, steps_pm25)
-  lki_pm10 <- findInterval(pm10, steps_pm10)
-  lki_o3 <- findInterval(o3, steps_o3)
+  dfr <- data.frame(
+    lki_no2 = findInterval(no2, steps_no2),
+    lki_pm25 = findInterval(pm25, steps_pm25),
+    lki_pm10 = findInterval(pm10, steps_pm10),
+    lki_o3 = findInterval(o3, steps_o3)
+  )
 
-  lki <- pmax(lki_no2, lki_pm25, lki_pm10, lki_o3)
+  dfr$lki <- pmax(dfr$lki_no2, dfr$lki_pm25, dfr$lki_pm10, dfr$lki_o3, na.rm = T)
+  dfr$var <- apply(dfr[,1:4], 1, function(x) var(x, na.rm = T))
+  dfr$lki2 <- ifelse(!is.na(dfr$var) & dfr$var == 0, dfr$lki + 1, dfr$lki)
 
-  if (stats::var(c(lki_no2, lki_pm25, lki_pm10, lki_o3)) == 0) {
-    lki <- lki + 1
-  }
-
-  lki
+  dfr$lki2
 }
