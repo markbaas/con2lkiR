@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/con2lki)](https://CRAN.R-project.org/package=con2lki)
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis build status](https://travis-ci.com/markbaas/con2lkiR.svg?branch=master)](https://travis-ci.com/markbaas/con2lkiR)
 <!-- badges: end -->
 

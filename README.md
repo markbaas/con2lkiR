@@ -7,8 +7,6 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/con2lki)](https://CRAN.R-project.org/package=con2lki)
-[![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis build
 status](https://travis-ci.com/markbaas/con2lkiR.svg?branch=master)](https://travis-ci.com/markbaas/con2lkiR)
 <!-- badges: end -->
@@ -57,6 +55,6 @@ df %>% mutate(
 #> 1  15  35    4   45   6
 #> 2  30  20   30   40   6
 #> 3 100  58  101   99   9
-#> 4   1   0    0    2   1
+#> 4   1   0    0    2   2
 #> 5 201 201  101  110  11
 ```
